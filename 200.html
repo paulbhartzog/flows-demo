@@ -18,34 +18,14 @@
 
 	<div class="hidden">
 
-		<div class="httpfile">
-			<a class="close">&times;</a>
-			<div class="row show-grid">
-				<div class="span2">
-					<div class="control-group">
-						<div class="controls">
-							<input type="text" class="input-medium fakeinputname" value="">
-						</div>
-					</div>
-				</div>
-
-				<div class="span3">
-					<div class="control-group">
-						<div class="controls">
-							<input class="input-file realinputvalue" multiple type="file">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<div class="httpparameter">
 			<a class="close">&times;</a>
 			<div class="row show-grid">
+
 				<div class="span2">
 					<div class="control-group">
 						<div class="controls">
-							<input type="text" class="input-medium fakeinputname" value="">
+							<input type="text" class="input-medium fakeinputname" value="" placeholder="response_type">
 						</div>
 					</div>
 				</div>
@@ -53,36 +33,15 @@
 				<div class="span3">
 					<div class="control-group">
 						<div class="controls">
-							<input type="text" class="input-xlarge realinputvalue" value="">
+							<input type="text" class="input-xlarge realinputvalue" value="" placeholder="xml">
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 
-		<div class="httpauth">
-			<a class="close">&times;</a>
-			<div class="row show-grid">
-				<div class="span2">
-					<div class="control-group">
-						<div class="controls">
-							<input type="text" class="input-medium fakeinputname" value="">
-						</div>
-					</div>
-				</div>
-
-				<div class="span3">
-					<div class="control-group">
-						<div class="controls">
-							<input type="password" class="input-xlarge realinputvalue" value="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	</div>
+	</div><!-- end hidden -->
 
 	<div class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
@@ -108,10 +67,9 @@
 			<div id="leftcolumn" class="span6">
 				<form id="paramform" class="well" target="outputframe">
 					<fieldset>
-						<legend>HTTP request options</legend>
+						<legend>Flows HTTP request</legend>
 
 						<br />
-
 
 						<div class="row show-grid">
 							<div class="span1">
@@ -120,11 +78,6 @@
 									<div class="controls">
 										<select class="input-small" id="httpmethod">
 											<option>GET</option>
-											<option>POST</option>
-  											<option>OPTIONS</option>
-											<option>PUT</option>
-											<option>DELETE</option>
-											<option>HEAD</option>
 										</select>
 									</div>
 								</div>
@@ -141,88 +94,32 @@
 							</div>
 						</div>
 
-						<p class="help-block">Method and Endpoint are required. Click
-							below to add additional parameters.</p>
-
-						<div align="left">
-							<button id="addauthbutton" class="btn btn-primary" style="margin-bottom: 1.5em;">
-								<i class="icon-lock icon-white"></i> Add authentication
-							</button>
-						</div>
-
-						<div id="authentication">
-
-							<div class="row show-grid">
-								<div class="span2">
-									<div class="control-group">
-										<label class="control-label">Username</label>
-									</div>
-								</div>
-
-								<div class="span3">
-									<div class="control-group">
-										<label class="control-label">Password</label>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div id="allheaders">
-
-							<div class="row show-grid">
-								<div class="span2">
-									<div class="control-group">
-										<label class="control-label">Header Name</label>
-									</div>
-								</div>
-
-								<div class="span3">
-									<div class="control-group">
-										<label class="control-label">Header Value</label>
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-						<div align="left">
-							<button id="addheaderbutton" class="btn btn-primary">
-								<i class="icon-plus icon-white"></i> Add header
-							</button>
-						</div>
-						<br />
-
+						<p class="help-block">Method and Endpoint are required.</p>
+						<p class="help-block">Click below to add additional parameters.</p>
 						<div id="allparameters">
-
 							<div class="row show-grid">
 								<div class="span2">
 									<div class="control-group">
 										<label class="control-label">Parameter Name</label>
 									</div>
 								</div>
-
 								<div class="span3">
 									<div class="control-group">
-										<label class="control-label">Parameter Value</label>
+										<label class="control-label" placeholder="xml">Parameter Value</label>
 									</div>
 								</div>
 							</div>
-
 						</div>
 
 						<div align="left">
 							<button id="addprambutton" class="btn btn-primary">
 								<i class="icon-plus icon-white"></i> Add parameter
 							</button>
-							<button id="addfilebutton" class="btn btn-primary">
-								<i class="icon-file icon-white"></i> Add file
-							</button>
 						</div>
-						<br />
 
 						<div align="right">
 							<button id="submitajax" class="btn btn-success btn-large">
-								<i class="icon-download-alt icon-white"></i> Ajax request
+								<i class="icon-download-alt icon-white"></i> Flow It!
 							</button>
 							<img src="spinner.gif" id="ajaxspinner" />
 						</div>
@@ -246,6 +143,10 @@
 					<pre class="pre-scrollable prettyprint linenums" id="outputpre"></pre>
 					<pre class="pre-scrollable prettyprint linenums" id="headerpre"></pre>
 				</div>
+			</div>
+
+			<div class="span12" style="font-size">
+				<pre class="pre-scrollable"><h6>modified from <a href="https://github.com/jeroenooms/resttesttest" target="_blank">https://github.com/jeroenooms/resttesttest</a></h6></pre>
 			</div>
 		</div>
 
