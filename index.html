@@ -11,6 +11,16 @@
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link href="debug.css" rel="stylesheet">
+
+	<style>
+	h6 {
+		font-size: 10px;
+	}
+	.url-field {
+		width: 100%;
+	}
+	</style>
+
 </head>
 
 <body>
@@ -35,37 +45,170 @@
 	<div class="container">
 
 		<div class="row show-grid">
+			<div class="well">
+				<pre>
+					WHY
+					Flows is, discoverable interoperability
+
+					HOW
+					required
+					Flows component MUST
+					* URI canonical location of component
+					* sippable, sip response
+  					* request types accepted
+	  				* response types available
+					* default response method
+					* default response type
+					highly suggested
+					* name
+					* version
+					* usage, human readable
+					* default = sip
+					optional
+					* other elements
+				</pre>
+			</div>
+		</div>
+
+		<div class="row show-grid">
+			<div class="alert alert-info">
+				<a class="close" data-dismiss="alert">&times;</a> <strong>Welcome!</strong>
+				<p>
+					Use this simple demo to see how Flows objects self-define and respond to requests.
+					<ol>
+						<li>Look at the HTTP method, URL, and parameters</li>
+						<li>Click on the <b>Do It</b> button</li>
+					</ol>
+				</p>
+				<p>
+					(Note: This page requires a browser with HTML5 support.)
+				</p>
+			</div>
+		</div>
+
+		<div class="row show-grid">
 			<div id="leftcolumn" class="span6">
-				<form id="paramform" class="well" target="outputframe">
-					<fieldset>
-						<legend>Flows HTTP request</legend>
+				<fieldset>
+					<legend>Flows HTTP Request</legend>
 
-						<br />
-
+					<!-- sip example -->
+					<form id="paramform1" class="well" target="outputframe">
+						<h4>Sip</h4>
 						<div class="row show-grid">
 							<div class="span1">
 								<div class="control-group">
 									<label class="control-label" for="httpmethod">Method</label>
 									<div class="controls">
-										<select class="input-small" id="httpmethod">
-											<option>GET</option>
-										</select>
+										<input type="text" class="input-small" id="httpmethod1" value="GETs" disabled />
 									</div>
 								</div>
 							</div>
 
 							<div class="span4">
 								<div class="control-group">
-									<label class="control-label" for="urlvalue">Endpoint</label>
+									<label class="control-label" for="urlvalue1">Endpoint</label>
 									<div class="controls">
-										<input type="text" class="input-xlarge" id="urlvalue"
+										<input type="text" class="url-field" id="urlvalue1"
+											value="http://paulbhartzog.org/flows/echo.php?sip">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div align="right">
+							<button id="submitajax1" class="btn btn-info btn-small">
+								Do It! <i class="icon-arrow-right icon-white"></i>
+							</button>
+						</div>
+					</form>
+
+					<!-- default example -->
+					<form id="paramform2" class="well" target="outputframe">
+						<h4>Default Response</h4>
+						<div class="row show-grid">
+							<div class="span1">
+								<div class="control-group">
+									<label class="control-label" for="httpmethod">Method</label>
+									<div class="controls">
+										<input type="text" class="input-small" id="httpmethod2" value="GET" disabled />
+									</div>
+								</div>
+							</div>
+
+							<div class="span4">
+								<div class="control-group">
+									<label class="control-label" for="urlvalue2">Endpoint</label>
+									<div class="controls">
+										<input type="text" class="url-field" id="urlvalue2"
 											value="http://paulbhartzog.org/flows/echo.php">
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<p class="help-block">Method and Endpoint are required.</p>
+						<div align="right">
+							<button id="submitajax2" class="btn btn-info btn-small">
+								Do It! <i class="icon-arrow-right icon-white"></i>
+							</button>
+						</div>
+					</form>
+
+					<!-- request/response example -->
+					<form id="paramform3" class="well" target="outputframe">
+						<h4>Requested Response</h4>
+						<div class="row show-grid">
+							<div class="span1">
+								<div class="control-group">
+									<label class="control-label" for="httpmethod">Method</label>
+									<div class="controls">
+										<input type="text" class="input-small" id="httpmethod3" value="GET" disabled />
+									</div>
+								</div>
+							</div>
+
+							<div class="span4">
+								<div class="control-group">
+									<label class="control-label" for="urlvalue3">Endpoint</label>
+									<div class="controls">
+										<input type="text" class="url-field" id="urlvalue3"
+											value="http://paulbhartzog.org/flows/echo.php?response_type=xml">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div align="right">
+							<button id="submitajax3" class="btn btn-info btn-small">
+								Do It! <i class="icon-arrow-right icon-white"></i>
+							</button>
+						</div>
+					</form>
+
+
+					<div class="hidden">
+						<div class="httpparameter">
+							<a class="close">&times;</a>
+							<div class="row show-grid">
+								<div class="span2">
+									<div class="control-group">
+										<div class="controls">
+											<input type="text" class="input-medium fakeinputname" value="" placeholder="response_type">
+										</div>
+									</div>
+								</div>
+								<div class="span3">
+									<div class="control-group">
+										<div class="controls">
+											<input type="text" class="input-xlarge realinputvalue" value="" placeholder="xml">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!-- end hidden -->
+
+						<!--
+
 						<p class="help-block">Click below to add additional parameters.</p>
 						<div id="allparameters">
 							<div class="row show-grid">
@@ -87,67 +230,31 @@
 								<i class="icon-plus icon-white"></i> Add parameter
 							</button>
 						</div>
-
-						<div align="right">
-							<button id="submitajax" class="btn btn-success btn-large">
-								<i class="icon-download-alt icon-white"></i> Flow It!
-							</button>
-							<img src="spinner.gif" id="ajaxspinner" />
-						</div>
-					</fieldset>
-				</form>
-
-				<div id="errordiv"></div>
-
-  			<div class="alert alert-info">
-					<a class="close" data-dismiss="alert">&times;</a> <strong>Welcome!</strong>
-          Use this simple page to poke around at the API.
-          Specify HTTP method, URL and parameters, and click on <b>Ajax Request</b>.
-          Note that this page requires a browser with HTML5 support.
-				</div>
-
+-->
+				</fieldset>
 			</div>
 
 			<div class="span6">
-				<div id="ajaxoutput">
-					<pre id="statuspre">0</pre>
-					<pre class="pre-scrollable prettyprint linenums" id="outputpre"></pre>
-					<pre class="pre-scrollable prettyprint linenums" id="headerpre"></pre>
-				</div>
+				<fieldset>
+					<legend>Flows HTTP Response</legend>
+
+					<div id="ajaxoutput">
+						<div id="errordiv"></div>
+						<pre id="statuspre"><img src="spinner.gif" id="ajaxspinner" /></pre>
+						<pre class="pre-scrollable prettyprint linenums" id="outputpre"></pre>
+						<pre class="pre-scrollable prettyprint linenums" id="headerpre"></pre>
+					</div>
+
+				</fieldset>
 			</div>
 
 			<div class="span12" style="font-size">
 				<pre class="pre-scrollable"><h6>modified from <a href="https://github.com/jeroenooms/resttesttest" target="_blank">https://github.com/jeroenooms/resttesttest</a></h6></pre>
 			</div>
+
 		</div>
-
-		<br>
-
 
 	</div>
-
-	<div class="hidden">
-		<div class="httpparameter">
-			<a class="close">&times;</a>
-			<div class="row show-grid">
-				<div class="span2">
-					<div class="control-group">
-						<div class="controls">
-							<input type="text" class="input-medium fakeinputname" value="" placeholder="response_type">
-						</div>
-					</div>
-				</div>
-				<div class="span3">
-					<div class="control-group">
-						<div class="controls">
-							<input type="text" class="input-xlarge realinputvalue" value="" placeholder="xml">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div><!-- end hidden -->
-
 
 	<script src="jquery-1.10.2.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
