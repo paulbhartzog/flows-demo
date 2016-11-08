@@ -1,48 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Flows Demo Application</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
+	<meta charset="utf-8">
+	<title>Flows Demo Application</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A demo application for the Flows interoperability standard for network components.">
+	<meta name="author" content="Paul B. Hartzog">
 
-<!-- Le styles -->
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-<link href="debug.css" rel="stylesheet">
-
+	<!-- styles -->
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="debug.css" rel="stylesheet">
 </head>
 
 <body>
-
-	<div class="hidden">
-
-		<div class="httpparameter">
-			<a class="close">&times;</a>
-			<div class="row show-grid">
-
-				<div class="span2">
-					<div class="control-group">
-						<div class="controls">
-							<input type="text" class="input-medium fakeinputname" value="" placeholder="response_type">
-						</div>
-					</div>
-				</div>
-
-				<div class="span3">
-					<div class="control-group">
-						<div class="controls">
-							<input type="text" class="input-xlarge realinputvalue" value="" placeholder="xml">
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-	</div><!-- end hidden -->
-
 	<div class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
 			<div class="container">
@@ -154,6 +125,29 @@
 
 
 	</div>
+
+	<div class="hidden">
+		<div class="httpparameter">
+			<a class="close">&times;</a>
+			<div class="row show-grid">
+				<div class="span2">
+					<div class="control-group">
+						<div class="controls">
+							<input type="text" class="input-medium fakeinputname" value="" placeholder="response_type">
+						</div>
+					</div>
+				</div>
+				<div class="span3">
+					<div class="control-group">
+						<div class="controls">
+							<input type="text" class="input-xlarge realinputvalue" value="" placeholder="xml">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- end hidden -->
+
 
 	<script src="jquery-1.10.2.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
