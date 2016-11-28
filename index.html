@@ -33,7 +33,7 @@
 				</a> <a class="brand" href="#">Flows Demo Application</a>
 				<div class="nav-collapse">
 					<ul class="nav">
-						<li><a target="_blank" href="http://github.com/paulbhartzog/flows-dev">Source Code</a></li>
+						<li><a target="_blank" href="http://github.com/paulbhartzog/flows-demo">Source Code</a></li>
 						<li><a target="_blank" href="http://github.com/paulbhartzog">Author</a></li>
 					</ul>
 				</div>
@@ -46,27 +46,123 @@
 
 		<div class="row show-grid">
 			<div class="well">
-				<pre>
-					WHY
-					Flows is, discoverable interoperability
+				<h1>Flows</h1>
+				<h2>A Specification For Discoverable Interoperability</h2>
+				<h3>Why?</h3>
+				<p>
+					Flows is the beginning a specification for discoverable interoperability.
+					 It stems from a simple but crucial premise in language, commented
+					  upon by Niklas Luhmann, myself, and likely others.
+						The spontaneously-catalyzed emergence of communicative networks occurs
+						when entities <i><strong>capable</strong></i> of communicating make
+						overtures towards each other in order to:
+					</p>
+					<p>
+						<ol>
+							<li>
+								discover each other's capabilities, and
+							</li>
+							<li>
+								establish a means of communicating
+							</li>
+						</ol>
+					</p>
+					<p>
+						These overtures are neatly represented in the expression:
+					</p>
+				<blockquote>
+					<h4>How do I communicate with you?</h4>
+				</blockquote>
+				<p>
+					Flows enables the flow of information by making possible
+					a network of ever-extensible components.  Any component can communicate to
+					another component, and if they cannnot, then all that is needed is to create
+					a third component in between them that can handle the necessary translation.
+				</p>
+				<p>
+					Obviously, Flows will be most successful when the components attempting
+					to communicate are already similar enough that their overtures and responses
+					can be adequately interpreted.  HTTP components that utilize standard methods,
+					or devices that are already similarly-enabled.
+				</p>
+				<p>
+					Flows is not a panacea, however.  We must accept that their will be situations
+					and components who are unable to establish methods of communication simply
+					because they are too differently enabled, cf. a deaf person speaking in sign
+					language to a blind person who cannot see hand gestures.
+				</p>
+				<h3>How?</h3>
+				<h4>Required</h4>
+				<dl>
+					<p>
+						To declare a communicative component as Flows-ready is very simple.
+						A Flows component MUST:
+					</p>
+					<dt>* respond to attempts to communicate</dt>
+					<dd>In Flows, we call this "being sippable." For a Flows component to be sippable it must respond to a "sip" request.
+					In a text setting, this might be achieved by passing "sip" into the component,
+					but in other contexts "sipping" the component could utilize other techniques.
+					At its most basic, a "sip" of any kind is an attempt to discover the communicative
+					capabilities of an (as yet) unknown entity.</dd>
+					<dt>* Default Response</dt>
+					<dd>The default response is in fact a kind of paradox.  While it is intended
+						to be an extension of the description above, if the recipient cannot
+						receive or interpret the default response then it in fact does no good.
+						The standard default response should almost <strong>always</strong>
+						be identical to a sip.</dd>
+				</dl>
+				<dl>
+					<p>
+						The response to a "sip" request MUST include:
+					</p>
+					<dt>* the canonical address of the component.</dt>
+					<dd>This could be a protocol like HTTP and a URI, or it could be something
+					very different depending on the communicative context in which the
+						components exist.  Robots attempting to communicate with radio or lasers
+						would have very different self-descriptions and requirements than
+						an object in a built environment, like a phone or a refrigerator.
+						It may be desirable to break this item into several separate items.
+					</dd>
+					<dt>* the types of responses the component can produce</dt>
+					<dd>A "request" is defined as any attempt to communicate.  This could
+					be anything from an HTTP request to a flashing light or sound, depending
+					on the environment, methods, and context.</dd>
+					<dt>* default response method</dt>
+					<dd>asdf</dd>
+					<dt>* default response type</dt>
+					<dd>asdf</dd>
+				</dl>
+				<h4>Highly Recommended</h4>
+				<dl>
+					<p>
+						A Flows component is only as good as it's available description.
+						Therefore, it is highly suggested that a well-described component
+						would include the following:
+					</p>
+					<dt>* Name</dt>
+					<dd>A simple human readable name</dd>
+					<dt>* Version</dt>
+					<dd>A version number can make it easier for commnicants to determine if they should
+						adjust their communications based on previously known information about
+						the target component.</dd>
+					<dt>* Short Description</dt>
+					<dd>A clear summary description in a human readable form.</dd>
+					<dt>* Long Description</dt>
+					<dd>A clear and detailed description in a human readable form can also serve as a usage
+						guideline.</dd>
+				</dl>
+				<h4>Optional</h4>
+				<dl>
+					<p>
+						Optional Information.  Flows makes no constraint on how much information
+						can be made available from a component.  Go crazy!
+					</p>
+					<dt>* Other Information</dt>
+					<dd>Anything you care to add?</dd>
+				</dl>
 
-					HOW
-					required
-					Flows component MUST
-					* URI canonical location of component
-					* sippable, sip response
-  					* request types accepted
-	  				* response types available
-					* default response method
-					* default response type
-					highly suggested
-					* name
-					* version
-					* usage, human readable
-					* default = sip
-					optional
-					* other elements
-				</pre>
+				<h3>Flows Extensibility</h3>
+
 			</div>
 		</div>
 
